@@ -1,0 +1,5 @@
+
+错误：device eth0 does not seem to be present delaying initialization
+解决：
+1.删除/etc/sysconfig/network-scripts/ifcfg-eth0,中MAC地址一行删掉。
+2.删除/etc/udev/rules.d/70-persistent-net.rules文件，重启系统。
