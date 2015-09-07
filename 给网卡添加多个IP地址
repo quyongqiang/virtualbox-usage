@@ -1,0 +1,11 @@
+[root@localhost ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0:2
+DEVICE="eth0:2"
+BOOTPROTO=static
+ONBOOT=yes
+TYPE=Ethernet
+UUID=0b30d4cd-bdf1-46ba-b3b9-00d1d8b94fb
+NM_CONTROLLED="yes"
+IPADDR=192.168.2.2
+NETMASK=255.255.255.0
+
+service network reload
