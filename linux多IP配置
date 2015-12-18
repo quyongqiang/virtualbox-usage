@@ -1,0 +1,26 @@
+# cat /etc/sysconfig/network-scripts/ifcfg-eth0
+DEVICE="eth0"
+BOOTPROTO=static
+ONBOOT=yes
+TYPE=Ethernet
+NM_CONTROLLED="yes"
+IPADDR=192.168.0.33
+NETMASK=255.255.255.0
+
+ 
+
+# cat /etc/sysconfig/network-scripts/ifcfg-eth0:1
+DEVICE="eth0:1"
+BOOTPROTO=static
+ONBOOT=yes
+TYPE=Ethernet
+NM_CONTROLLED="yes"
+IPADDR=10.1.1.63
+NETMASK=255.255.240.0
+GATEWAY=10.1.0.1
+DNS1=223.5.5.5
+ 
+
+# 注意重启网络服务是比较危险，如果IP地址设置错误导致网络不能启动，会导致SSH远程连接掉线
+# 注意在centos7中 /etc/resolv.conf 中配置nameserver不管用了，需要在网卡配置文件中配置DNS1, DNS2
+service network restart
