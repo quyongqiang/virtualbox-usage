@@ -1,3 +1,4 @@
+# 使用配置文件配置
 # cat /etc/sysconfig/network-scripts/ifcfg-eth0
 DEVICE="eth0"
 BOOTPROTO=static
@@ -24,3 +25,7 @@ DNS1=223.5.5.5
 # 注意重启网络服务是比较危险，如果IP地址设置错误导致网络不能启动，会导致SSH远程连接掉线
 # 注意在centos7中 /etc/resolv.conf 中配置nameserver不管用了，需要在网卡配置文件中配置DNS1, DNS2
 service network restart
+
+
+# 使用命令配置多IP，网络服务重启后失效
+ifconfig eth1:0 192.168.0.2/24 up
